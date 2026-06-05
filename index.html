@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<title>FILMYPRO Studio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ===== INTRO ===== */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: intro 4s forwards;
+}
+
+.camera {
+  width: 90px;
+  height: 55px;
+  border: 3px solid red;
+  border-radius: 8px;
+  animation: shake 0.4s infinite;
+  position: relative;
+}
+
+.camera::before {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 12px;
+  width: 28px;
+  height: 28px;
+  border: 3px solid red;
+  border-radius: 50%;
+}
+
+.glitch {
+  font-size: 55px;
+  color: red;
+  margin-top: 20px;
+  animation: glitch 1.2s infinite;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 30px;
+  border-bottom: 1px solid #111;
+}
+
+header h1 {
+  color: red;
+  font-size: 42px;
+  text-shadow: 0 0 20px red;
+}
+
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: red;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* ABOUT */
+.about {
+  max-width: 700px;
+  margin: auto;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* SERVICES */
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box {
+  width: 220px;
+  background: #0a0a0a;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px red;
+  border-color: red;
+}
+
+/* PROJECT CARD */
+.card {
+  width: 380px;
+  margin: auto;
+  background: #0a0a0a;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 30px red;
+  transform: scale(1.03);
+}
+
+.badge {
+  display: inline-block;
+  background: red;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.disabled {
+  background: #333;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* COMING SOON */
+.timeline {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #0a0a0a;
+  padding: 15px;
+  width: 180px;
+  border-radius: 12px;
+  border: 1px solid #222;
+}
+
+/* ANIMATIONS */
+@keyframes intro {
+  0% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:0; visibility:hidden;}
+}
+
+@keyframes shake {
+  0% {transform: translate(0,0);}
+  25% {transform: translate(1px,-1px);}
+  50% {transform: translate(-1px,1px);}
+  75% {transform: translate(1px,1px);}
+  100% {transform: translate(0,0);}
+}
+
+@keyframes glitch {
+  0% {transform: translate(0);}
+  20% {transform: translate(-2px,2px);}
+  40% {transform: translate(2px,-2px);}
+  60% {transform: translate(-1px,1px);}
+  80% {transform: translate(1px,-1px);}
+  100% {transform: translate(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="camera"></div>
+  <div class="glitch">FILMYPRO</div>
+  <p>🎬 Filmové studio se spouští...</p>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+<header>
+  <h1>FILMYPRO Studio</h1>
+  <nav>
+    <a href="#about">O nás</a>
+    <a href="#services">Produkce</a>
+    <a href="#project">Projekt</a>
+    <a href="#coming">Coming soon</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>O studiu</h2>
+  <p class="about">
+    FILMYPRO je moderní filmové studio inspirované velkými
+    produkčními společnostmi jako Barrandov.
+    Vytváříme filmy, reklamy a filmové projekty.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Produkce</h2>
+
+  <div class="services">
+    <div class="box">🎬 Filmová tvorba</div>
+    <div class="box">🎥 Trailery</div>
+    <div class="box">📢 Reklamy</div>
+    <div class="box">📽 Postprodukce</div>
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section id="project">
+  <h2>Aktuální projekt</h2>
+
+  <div class="card">
+    <h3>🎬 Škola hororu</h3>
+    <div class="badge">HORROR FILM</div>
+    <p>
+      Hlavní projekt studia FILMYPRO.
+      Temná škola, kde realita přestává existovat.
+    </p>
+
+    <button class="disabled">🎥 Trailer nedostupný</button>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section id="coming">
+  <h2>Coming Soon</h2>
+  <p>Produkční fáze dalších projektů</p>
+
+  <div class="timeline">
+    <div class="step">Vývoj</div>
+    <div class="step">Pre-produkce</div>
+    <div class="step">Natáčení</div>
+    <div class="step">Postprodukce</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Kontakt</h2>
+  <p>Email: info@filmypro.cz</p>
+  <p>Studio: FILMYPRO Production</p>
+</section>
+
+</div>
+
+<script>
+setTimeout(() => {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}, 4000);
+</script>
+
+</body>
+</html>
